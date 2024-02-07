@@ -73,4 +73,4 @@ async def app_post_predictions(request: Request, username: str):
     return app_templates.TemplateResponse('recommendations.html', {'request': request, 'err_msg': message})
 
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run("app:app", host="0.0.0.0", port=int(os.environ.get('PORT', 8123)))
