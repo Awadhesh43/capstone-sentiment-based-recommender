@@ -1,0 +1,62 @@
+<head>
+    <title>EBUSS Online Shopping: Data Analytics</title>
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{  url_for('static', path='/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="{{  url_for('static', path='/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container topbar bg-primary d-lg-block">
+        <div class="d-flex justify-content-between">
+            <div class="top-info ps-2">
+                <h2> Ebuss Sentiment Based Product Recommendation System</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container px-2">
+        <nav class="navbar navbar-light bg-white">
+            <a href="#" class="nav-item nav-link active">Home</a>
+        </nav>
+        <div class="row">
+            <p>Ebuss has captured a huge market share in many fields, and it sells the products in various categories such as household essentials, books, personal care products, medicines, cosmetic items, beauty products, electrical appliances, kitchen and dining products and health care products.</p>
+            <p>With the advancement in technology, it is imperative for Ebuss to grow quickly in the e-commerce market to become a major leader in the market because it has to compete with the likes of Amazon, Flipkart, etc., which are already market leaders.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid featurs py-0">
+        <div class="container py-0">
+            <div class="text-primary text-center display-9">
+                <p style="color: lightcoral;">Choose the option for exploring Product Recommendations</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6">
+                    <div class="featurs-item text-center rounded bg-light p-2">
+                        <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                            <a class="fas fa-duotone fa-globe fa-5x text-white" href="/app"></a>
+                        </div>
+                        <div class="featurs-content text-center">
+                            <h5>Recommendation WebApp</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="featurs-item text-center rounded bg-light p-2">
+                        <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                            <a class="fas fa-file-alt fa-4x text-white" href="/docs"></a>
+                        </div>
+                        <div class="featurs-content text-center">
+                            <h5>Recommendation API</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
