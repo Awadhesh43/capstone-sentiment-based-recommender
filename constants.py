@@ -9,7 +9,6 @@ PROCESSED_DATA = "processed-data.pkl"
 RECOMMENDATION_MODEL = "user-based-recommendation-model.pkl"
 
 # Model Features
-
 FEATURE_REVIEW_TEXT_LEMMA = "reviews_full_text_lemma"
 FEATURE_PREDICTED_SENTIMENT = "predicted_sentiment"
 FEATURE_NAME = 'name'

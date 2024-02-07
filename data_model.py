@@ -1,12 +1,12 @@
 from pydantic import BaseModel
-from typing import Any, Optional
 
 class InputDataModel(BaseModel):
-    user_id: str
+    username: str
     limit: int
 	
 class OutputDataModel(BaseModel):
-    recommendations: Any
+    message: str
+    recommendations: list = []
 
 class UserDataModel(BaseModel):
-    users: Any
+    users: list = []

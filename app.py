@@ -1,57 +1,42 @@
 # Import python libraries
 import uvicorn
 from fastapi import FastAPI, Request
-from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from flask import Flask, render_template
+from flask import Flask
 from constants import TOP_N_RECOMMENDATIONS
 import model as model
 from data_model import *
 
 # Init fastAPI
 app = FastAPI()
-
 # Init flask APP
 flask_app = Flask(__name__)
 
-# Mount Flask App on FastAPI
-#app.mount("/app", WSGIMiddleware(flask_app))
-
-def apply_model(userId, limit):
-	return model.product_recommendations(userId, limit)
-
-# API Landing page
-@app.get('/api', include_in_schema=False)
-async def api_default():
-	return {'Message': "Sentiment Based Product Recommendation Model API",
-		 	'FastAPI_route': '/docs'}
+def apply_model(username, limit):
+	return model.product_recommendations(username, limit)
 
 # API Predict recommendations	
 @app.post("/api/predict", response_model=OutputDataModel)
 async def api_post_predictions(inputDataModel: InputDataModel):
     ''' Default limit is 5 if provided Zero or Negative'''
     if (inputDataModel.limit <= 0):
-        recommendations = apply_model(inputDataModel.user_id, TOP_N_RECOMMENDATIONS)
+        recommendations = apply_model(inputDataModel.username, TOP_N_RECOMMENDATIONS)
     else:
-        recommendations = apply_model(inputDataModel.user_id, inputDataModel.limit)  
-    
-    recommendations = list(recommendations.values.tolist())
-    
-    response = {
-    	"recommendations": recommendations
-    }
+        recommendations = apply_model(inputDataModel.username, inputDataModel.limit)  
+    if (recommendations is not None):
+        recommendations = list(recommendations.values.tolist())
+        response = {"message": f"Top {len(recommendations)} recommendations for User [{inputDataModel.username}].",
+                    "recommendations": recommendations}
+    else:
+        response = {"message": f"User [{inputDataModel.username}] not found. Please try again!"}
     return response
 
 # API List Users
 @app.get("/api/users", response_model=UserDataModel)
 async def api_get_users():
-    users = model.get_users()
-    response = {
-    	"users": users
-    }
-    return response
+    return {"users": model.get_users()}
 
 # FastAPI Templating
 
@@ -73,18 +58,18 @@ async def index_html(request:Request):
 
 # Recommendation page with predictions
 @app.get("/app/ml_predict", response_class=HTMLResponse)
-async def app_post_predictions(request: Request, userId: str):
-    userId=userId.strip().lower()
-    if (userId != ''):
-        recommendations = apply_model(userId, TOP_N_RECOMMENDATIONS)
+async def app_post_predictions(request: Request, username: str):
+    username=username.strip().lower()
+    if (username != ''):
+        recommendations = apply_model(username, TOP_N_RECOMMENDATIONS)
         if (recommendations is not None):
             column_names=recommendations.columns.values
             recommendations = list(recommendations.values.tolist())
-            return app_templates.TemplateResponse('recommendations.html', {'request': request, 'recommendations': recommendations, 'column_names': column_names, 'user_input': userId, 'zip': zip})
+            return app_templates.TemplateResponse('recommendations.html', {'request': request, 'recommendations': recommendations, 'column_names': column_names, 'user_input': username, 'zip': zip})
         else:
-            message=f"User [{userId}] not found. Please try again!"
+            message=f"User [{username}] not found. Please try again!"
     else:
-        message="UserId shouldn't be Empty, Whitespaces!"
+        message="Username shouldn't be Empty, Whitespaces!"
     return app_templates.TemplateResponse('recommendations.html', {'request': request, 'err_msg': message})
 
 if __name__ == "__main__":
