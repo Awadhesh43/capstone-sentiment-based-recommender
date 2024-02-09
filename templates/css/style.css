@@ -35,14 +35,14 @@
 }
 /*** Topbar End ***/
 
-/*** featurs Start ***/
-.featurs .featurs-item .featurs-icon {
+/*** features Start ***/
+.features .features-item .features-icon {
     position: relative;
     width: 120px;
     height: 120px;
 }
 
-.featurs .featurs-item .featurs-icon::after {
+.features .features-item .features-icon::after {
     content: "";
     width: 35px;
     height: 35px;
