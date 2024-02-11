@@ -49,14 +49,14 @@ async def api_get_users():
 # Static files mount
 app.mount("/static", StaticFiles(directory="templates/css"), name="static")
 # App templates for web pages
-deafult_templates = Jinja2Templates(directory="templates")
+default_templates = Jinja2Templates(directory="templates")
 app_templates = Jinja2Templates(directory="templates/app/")
 
 
 # Loading Index Html
 @app.get("/")
 async def index_html(request: Request):
-    return deafult_templates.TemplateResponse("index.html", {"request": request})
+    return default_templates.TemplateResponse("index.html", {"request": request})
 
 
 # Loading Recommendation page
