@@ -12,7 +12,7 @@ With the advancement in technology, it is imperative for Ebuss to grow quickly i
 
 * github link: https://github.com/Awadhesh43/capstone-sentiment-based-recommender
 
-* Heroku (Application is Live): 
+* Heroku (Application is Live): https://product-recommendation-nlp-app-29e391d3dfea.herokuapp.com
 
 ### Toolkit/Libraries
 
