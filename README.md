@@ -15,9 +15,9 @@ With the advancement in technology, it is imperative for Ebuss to grow quickly i
   
 #### Google colab Execution
 ##### Steps to run the Sentiment-Based-Product-Recommendation-Model.ipynb Jupyter file for model files creation 
-* Create "Colab Notebooks" folder in mydrive. 
-* Within "Colab Notebooks" add "data" and "model_files" folder
-* Add sample30.csv data file in the "data" folder 
+* Create *"Colab Notebooks"* folder in mydrive. 
+* Within *"Colab Notebooks"* add *"data"* and *"model_files"* folder
+* Add sample30.csv data file in the *"data"* folder 
 * Run the file Sentiment-Based-Product-Recommendation-Model.ipynb
 
 ### Toolkit/Libraries
