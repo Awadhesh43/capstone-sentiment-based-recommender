@@ -54,19 +54,19 @@ app_templates = Jinja2Templates(directory="templates/app/")
 
 
 # Loading Index Html
-@app.get("/")
+@app.get("/", include_in_schema=False)
 async def index_html(request: Request):
     return default_templates.TemplateResponse("index.html", {"request": request})
 
 
 # Loading Recommendation page
-@app.get("/app", response_class=HTMLResponse)
+@app.get("/app", response_class=HTMLResponse, include_in_schema=False)
 async def recommendation_html(request: Request):
     return app_templates.TemplateResponse("recommendations.html", {"request": request})
 
 
 # Recommendation page with predictions
-@app.get("/app/ml_predict", response_class=HTMLResponse)
+@app.get("/app/ml_predict", response_class=HTMLResponse, include_in_schema=False)
 async def app_post_predictions(request: Request, username: str):
     username = username.strip().lower()
     if username != "":
