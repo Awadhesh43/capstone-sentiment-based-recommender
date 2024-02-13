@@ -8,7 +8,11 @@ Suppose you are working as a Machine Learning Engineer in an e-commerce company 
 
 With the advancement in technology, it is imperative for Ebuss to grow quickly in the e-commerce market to become a major leader in the market because it has to compete with the likes of Amazon, Flipkart, etc., which are already market leaders.
 
-### Solution
+### Solution Info and Steps 
+### in Google collab for model creation do create Colab Notebooks folder in mydrive. 
+### Within Colab Notebooks add data and model_files folder
+### Add sample30.csv data file in the data folder 
+### Then run the file Sentiment-Based-Product-Recommendation-Model.ipynb
 
 * github link: https://github.com/Awadhesh43/capstone-sentiment-based-recommender
 
