@@ -14,7 +14,7 @@ With the advancement in technology, it is imperative for Ebuss to grow quickly i
 * Heroku (Application is Live): https://product-recommendation-nlp-app-29e391d3dfea.herokuapp.com
   
 #### Google colab Execution
-##### Steps to run the Sentiment-Based-Product-Recommendation-Model.ipynb Jupyter file in Google collab for model creation 
+##### Steps to run the Sentiment-Based-Product-Recommendation-Model.ipynb Jupyter file for model files creation 
 * Create "Colab Notebooks" folder in mydrive. 
 * Within "Colab Notebooks" add "data" and "model_files" folder
 * Add sample30.csv data file in the "data" folder 
