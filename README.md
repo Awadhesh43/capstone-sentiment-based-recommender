@@ -9,7 +9,7 @@ Suppose you are working as a Machine Learning Engineer in an e-commerce company 
 With the advancement in technology, it is imperative for Ebuss to grow quickly in the e-commerce market to become a major leader in the market because it has to compete with the likes of Amazon, Flipkart, etc., which are already market leaders.
 
 ### Solution
-* github link: https://github.com/Awadhesh43/capstone-sentiment-based-recommender
+* GitHub link: https://github.com/Awadhesh43/capstone-sentiment-based-recommender
 
 * Heroku (Application is Live): https://product-recommendation-nlp-app-29e391d3dfea.herokuapp.com
   
